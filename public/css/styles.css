@@ -13,10 +13,18 @@
     --input-box-shadow: rgba(194, 195, 214, 0.50);
     --input-color: #494c6b;
     --button-color: #393a4b;
-    --bg-main: #FAFAFA;
+    --bg-body: #FAFAFA;
     --bg-tarefas: #FFF;
     --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
+    --border-color: #e3e4f1;
+    --text-color: #494c6b;
+    --info-text-color: #9495a5;
 
+}
+
+
+body {
+    background: var(--bg-body);
 }
 
 header {
@@ -68,9 +76,8 @@ header form button {
 
 
 main {
-    background: var(--bg-main);
     min-height: calc(100vh - 12.5rem);
-    padding-inline: 1.5rem;
+    padding-inline: 1.75rem;
 
 }
 
@@ -78,11 +85,19 @@ main {
     background-color: var(--bg-tarefas);
     box-shadow: var(--box-shadow);
     border-radius: .3125rem;
+    margin-top: -1rem;
 }
 
 .tarefas .tarefa{
     padding: 1rem 1.25rem;
     
+}
+
+.tarefas .tarefa + .tarefa { /*quando estiver dentro da section tarefas e tiver uma div tarefa depois de outra div tarefa...*/
+    border-top: 1px solid var(--border-color);
+
+
+
 }
 
 .tarefa form {
@@ -94,10 +109,18 @@ main {
     display: flex;
     align-items: center;
     gap: .75rem;
+    color: var(--text-color);
+    font-size: .75rem;
 }
 
 .tarefa button {
     border: none;
     background: none;
+}
 
+.informacoes {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
 }
